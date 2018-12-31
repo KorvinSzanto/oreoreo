@@ -1,4 +1,13 @@
+const /* enum */ Segment = {
+  o: "o",
+  re: "re"
+}
 
+const images = {
+  top: "./top-o.png",
+  middle: "./re.png",
+  bottom: "./bottom-o.png"
+}
 
 /** Convert a string to a valid "oreo" sequence */
 function sequence(oreo) {
@@ -76,8 +85,8 @@ if (window.location.hash) input.value = window.location.hash.substr(1)
 /** Event handler to update oreo */
 const handleKeyUp = () => {
   const exploded = sequence(window.location.hash = input.value)
-  apply(oreo, sequence)
-  window.location.hash = sequence.join()
+  apply(oreo, exploded)
+  window.location.hash = exploded.join()
 }
 
 input.addEventListener('keyup', handleKeyUp, {once: false})
