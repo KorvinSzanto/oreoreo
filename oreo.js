@@ -86,7 +86,7 @@ if (window.location.hash) input.value = window.location.hash.substr(1)
 const handleKeyUp = () => {
   const exploded = sequence(window.location.hash = input.value)
   apply(oreo, exploded)
-  window.location.hash = exploded.join()
+  window.location.hash = exploded.join('')
 }
 
 input.addEventListener('keyup', handleKeyUp, {once: false})
